@@ -186,7 +186,7 @@ func resourceKongAPIRead(d *schema.ResourceData, meta interface{}) error {
 	response, error := sling.New().Path("apis/").Get(id).ReceiveSuccess(api)
 
 	if error != nil {
-		return fmt.Errorf("error while updating API" + error.Error())
+		return fmt.Errorf("error while reading API" + error.Error())
 	}
 
 	if response.StatusCode == http.StatusNotFound {
